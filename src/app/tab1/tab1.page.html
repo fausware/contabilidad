@@ -1,17 +1,62 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <img src="./assets/barra-inf/info_icon.svg">
+          </ion-thumbnail>
+          <ion-label>Informacion</ion-label>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <img src="./assets/barra-busc/lupa_icon.svg">
+          </ion-thumbnail>
+          <ion-label>Buscador</ion-label>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-text-center ion-justify-content-center">
+      <table>
+        <thead>
+          <th>idFactura</th>
+          <th>Cliente</th>
+          <th>Cantidad</th>
+        </thead>
+        <tr *ngFor= "let factura of facturas | paginate: { itemsPerPage: 3, currentPage: p }">
+          <td>{{factura.idFactura}}</td>
+          <td>{{factura.Cliente}}</td>
+          <td>{{factura.Cantidad}}</td>
+        </tr>
+      </table>
+    </ion-row>
+    <div class="ion-text-center">
+      <pagination-controls
+        (pageChange)="p = $event"
+        previousLabel="Anterior"
+        nextLabel="Siguiente">
+      </pagination-controls>
+      </div>
+  </ion-grid>
+
+
+  <!-- Botones flotantes -->
+  <ion-fab vertical="center" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon src="./assets/menu-lat/nuevo_off.svg"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  
 </ion-content>
