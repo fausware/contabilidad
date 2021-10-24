@@ -1,24 +1,26 @@
 <ion-content [fullscreen]="true">
 
-  <ion-grid>
-    <ion-row>
-      <ion-col>
-        <ion-item>
+  <ion-header class="ion-no-border">
+    <ion-row ion-list>
+
+        <ion-item class="inf">
           <ion-thumbnail slot="start">
             <img src="./assets/barra-inf/info_icon.svg">
           </ion-thumbnail>
           <ion-label>Informacion</ion-label>
         </ion-item>
-      </ion-col>
-      <ion-col>
-        <ion-item>
+
+        <ion-item class="busc">
           <ion-thumbnail slot="start">
             <img src="./assets/barra-busc/lupa_icon.svg">
           </ion-thumbnail>
           <ion-label>Buscador</ion-label>
         </ion-item>
-      </ion-col>
+
     </ion-row>
+  </ion-header>
+    
+  <ion-grid>  
     <ion-row class="ion-text-center ion-justify-content-center">
       <table>
         <thead>
