@@ -25,3 +25,33 @@
 #container a {
   text-decoration: none;
 }
+
+table {
+  width: 90%; 
+  text-align: center;
+  background-color: #272727;
+  border-radius: 15px;
+}
+th, td {
+  padding: 8px;
+  border-left: 1px solid #ffffff;
+
+}
+th {
+  height: 50px;
+}
+thead {
+  border-bottom: 12px solid #ffffff;
+}
+.inf{
+  margin-bottom: 30px;
+  margin-left: 10%;
+  width: 40%;
+  border-radius: 0px 0px 10px 10px;
+}
+.busc{
+  margin-bottom: 30px;
+  margin-left: 4%;
+  width: 35%;
+  border-radius: 0px 0px 10px 10px;
+}
