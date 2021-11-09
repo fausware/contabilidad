@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-tab1',
@@ -45,6 +46,18 @@ export class Tab1Page {
           idFactura: 10, Cliente: "Jose", Cantidad: 75
         }]
     };
+
+  private eventsSubject: Subject<void> = new Subject<void>();
+
   constructor() { }
+
+  emitEventToChild() {
+    this.eventsSubject.next()
+  }
+  
+  ionViewDidLeave() {
+    console.log("Tab " + this.modelo.title + " is exited");
+    this.emitEventToChild();
+  }
 
 }

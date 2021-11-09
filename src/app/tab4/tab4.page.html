@@ -13,5 +13,5 @@
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Presupuestos"></app-explore-container>
+  <app-explore-container [events]="eventsSubject.asObservable()" [modelo]="modelo"></app-explore-container>
 </ion-content>

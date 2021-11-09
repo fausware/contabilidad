@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-explore-container',
@@ -6,11 +7,26 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./explore-container.component.scss'],
 })
 export class ExploreContainerComponent implements OnInit {
-  @Input() name: string;
+
+  private eventsSubscription: any
+
+  @Input() events: Observable<void>;
   @Input() modelo: {};
 
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log(this.modelo);
+    if (this.events !== undefined) {
+      this.eventsSubscription = this.events.subscribe(() => this.actualizar())
+    }
+  }
+
+  public actualizar() {
+    this.modelo = this.modelo;
+  }
+  ngOnDestroy() {
+    this.eventsSubscription.unsubscribe()
+  }
 
 }

@@ -28,10 +28,10 @@
           <th>Cliente</th>
           <th>Cantidad</th>
         </thead>
-        <tr *ngFor= "let factura of facturas | paginate: { itemsPerPage: 3, currentPage: p }">
-          <td>{{modelo.content.idFactura}}</td>
-          <td>{{modelo.content.Cliente}}</td>
-          <td>{{modelo.content.Cantidad}}</td>
+        <tr *ngFor= "let factura of modelo.content | paginate: { itemsPerPage: 3, currentPage: p }">
+          <td>{{factura.idFactura}}</td>
+          <td>{{factura.Cliente}}</td>
+          <td>{{factura.Cantidad}}</td>
         </tr>
       </table>
     </ion-row>
